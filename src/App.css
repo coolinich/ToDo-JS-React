@@ -1,38 +1,117 @@
+:root {
+  --main-bg-color: rgba(255, 255, 255, 1);
+  --main-border-color: rgba(70, 130, 180, 1);
+  --main-light-bg-color: rgba(144, 202, 249, 0.05);
+  --main-dark-bg-color: rgba(144, 202, 249, 0.1);
+  --regular-button-color: rgba(144, 202, 249, .5);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+
+.container {
+  max-width: 500px;
+  min-height: 300px;
+  overflow: auto;
+  margin: 2rem auto;
+  border: 1px solid var(--main-border-color);
+  border-radius: 5px;
+  padding: 1rem;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.btn {
+  padding: .75rem;
+  font-family: 'Comfortaa', cursive;
+  font-weight: 500;
+  border: none;
+  font-size: 1rem;
+  border-radius: 5px;
+}
+
+.btn.regular {
+  background-color: var(--regular-button-color);
+}
+
+.btn.primary {
+  background-color: var(--main-bg-color);
+}
+
+.btn__caption {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.btn:hover:not([disabled]) {
+  background-color: rgba(144, 202, 249, 0.2);
+}
+
+.clickable__icon {
+  cursor: pointer;
+}
+
+.delete__icon {
+  color: rgb(248, 0, 0);
+}
+
+
+.tasks__list {
+  margin: .5rem 0;
+}
+
+.task__wrapper {
+  padding: .5rem;
+  margin: .3rem 0;
+  background-color: var(--main-light-bg-color);
+}
+
+.task__wrapper:hover {
+  background-color: var(--main-dark-bg-color);
+}
+
+.task-description {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.task_completed {
+  border-left: 2px solid var(--main-border-color);
+  color: var(--main-border-color);
+}
+
+.add-task__form {
+  display: flex;
+  flex-direction: column;
+}
+
+.add-task__form .form-control {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: .75rem;
+}
+
+.add-task__form .form-control label {
+  font-size: .7rem;
+}
+
+.add-task__form input {
+  padding: .5rem;
+  border-radius: 5px;
+}
+
 .App {
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
